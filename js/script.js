@@ -19,12 +19,19 @@
 var mySong = {
 	title:"To Be Alive",
 	artist:"MonsterCat",
-	mp3Url:"https://open.spotify.com/album/2HmrtGzfaTtuqaFMbiBmw1",
-	imageUrl:"https://t2.genius.com/unsafe/220x0/https%3A%2F%2Fimages.genius.com%2F670c3dc0158515701984b5dc762bab51.1000x1000x1.jpg",
+	mp3url:"https://open.spotify.com/album/2HmrtGzfaTtuqaFMbiBmw1",
+	imageurl:"https://t2.genius.com/unsafe/220x0/https%3A%2F%2Fimages.genius.com%2F670c3dc0158515701984b5dc762bab51.1000x1000x1.jpg",
 }
 
 var myPlayList = [
 	{
+	"title":"To Be Alive",
+	"artist":"MonsterCat",
+	"mp3url":"https://open.spotify.com/album/2HmrtGzfaTtuqaFMbiBmw1",
+	"imageurl":"https://t2.genius.com/unsafe/220x0/https%3A%2F%2Fimages.genius.com%2F670c3dc0158515701984b5dc762bab51.1000x1000x1.jpg",
+	},
+	{
+	
 		"title":"24K Magic",
 		"artist":"Bruno Mars",
 		"mp3url":"https://open.spotify.com/track/6b8Be6ljOzmkOmFslEb23P",
@@ -49,10 +56,14 @@ var myPlayList = [
 
 // DOCUMENT READY FUNCTION
 $( document ).ready(function() {
-  
-$("#song").append("<img src=" + mySong.imageUrl + ">" )  
-$("#song").append("<p>" + mySong.title + "</p>" )
-$("#song").append("<p>" + mySong.artist + "</p>" )
+$("#submit").click(function() {
+	addSong();
+	clearList();
+	displayList();
+	
+	
+}); 
+
 displayList();
 
 
@@ -72,6 +83,7 @@ function displayList(){
 			<img src="${picture}">
 			<h1>${title}</h1>
 			<p>${artist}</p>
+			<a href>${mp3}</a>
 			
 		`)
 		
@@ -81,13 +93,27 @@ function displayList(){
 }
 
 function clearList(){
+	$(".songs").empty();
   
   
   
 }
 
 function addSong(){
- 
-  
+    var titleInput = $("#title").val();
+    var artistInput = $("#artist").val();
+    var playlinkInput = $("#play-link").val();
+    var albumimageInput = $("#album-image").val();
+      
+		
+
+    var newSong = {
+        "title": titleInput,
+		"artist": artistInput,
+		"mp3url": playlinkInput,
+		"imageurl":albumimageInput
+	
+    };
+    myPlayList.push(newSong);
   
 }

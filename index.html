@@ -4,7 +4,7 @@
   <head>
       <title>Playlist</title>
       
-      <link rel="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
 
       <!-- Link style.css here -->
       <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -18,10 +18,32 @@
   </head>
 
   <body>
+        <div class="row add-song"><!-- add song section -->
+          <div class="col">
+            <h2 class="text-center">Add Song</h2>
+            <div class="form-group">
+              <label for="title">Title</label>
+            <input type="text" class="form-control" id="title">
+            </div>
+          <div class="form-group">
+            <label for="artist">Artist</label>
+            <input type="text" class="form-control" id="artist">
+          </div>
+          <div class="form-group">
+            <label for="play-link">Play link</label>
+            <input type="text" class="form-control" id="play-link">
+          </div>
+          <div class="form-group">
+            <label for="album-image">Album Image</label>
+            <input type="text" class="form-control" id="album-image">
+          </div>
+          <button class="btn btn-success btn-block" id="submit"> Submit </button>
+        </div>
+      </div>
+        
     <div class="container text-center">
+      
       <h1> My Playlist </h1>
-      <input>
-      <button> Add Song </button>
       <div class="songs">
         <div id="song">
           
